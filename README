@@ -54,14 +54,17 @@
 #+END_SRC
 
 * Embedding of JSON values in Common Lisp
-- Set ~*JSON-OBJECT*~ to ~:hash-table~ (default), ~:alist~, or ~:plist~
-- Set ~*JSON-ARRAY*~ to ~:vector~ (default) or ~:list~
+- Set ~*JSON-OBJECT*~ to ~:HASH-TABLE~ (default), ~:ALIST~, or ~:PLIST~
+- Set ~*JSON-ARRAY*~ to ~:VECTOR~ (default) or ~:LIST~
 - Set ~*JSON-TRUE*~, ~*JSON-FALSE*~, ~*JSON-NULL*~ to your desired values.
 
 * Known bugs and implementation constraints
 - If the first non-whitespace char of a stream is not ASCII, behavior is
-  implementation dependent.  It's reasonable to check that ~(find (peek-char t
-  stream nil nil nil) "{[\"-0123456789tfn")~ is true before a top-level read.
+  implementation dependent.  It's reasonable to check that
+  #+BEGIN_SRC lisp
+    (FIND (PEEK-CHAR T STREAM NIL NIL NIL) "{[\"-0123456789tfn")
+  #+END_SRC
+  is true before a top-level read.
 - We assume host implements ~CL:CHAR-CODE~ and ~CL:CODE-CHAR~ using Unicode code
   points.
 - This library may trigger bugs in Slime or Sly due to readtable conflicts.
