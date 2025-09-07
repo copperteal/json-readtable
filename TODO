@@ -1,0 +1,12 @@
+# -*- mode: Org -*-
+#+TITLE: TODO
+#+AUTHOR: J. David Taylor
+
+- [ ] reader test suite
+- [ ] slime compatibility
+- [ ] sly compatibility
+- [ ] give option to translate names to symbols
+- [ ] introduce ~*MAX-PARSE-DEPTH*~ -- error on excess recursion
+- [ ] introduce ~*MAX-PARSE-TOKENS*~ -- error on excess of tokens
+- [ ] profiling
+- [ ] extend library to facilitate inline JSON in Common Lisp source
